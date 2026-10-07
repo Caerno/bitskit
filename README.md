@@ -1,6 +1,6 @@
-# caernautilus
+# bitskit
 
-Caerno utilities — a small toolbox of things I kept re-typing in every EDA notebook:
+A small toolbox of things I kept re-typing in every EDA notebook:
 quick dataset reports, a few plots, and sklearn-compatible encoders that can be
 dropped straight into a `Pipeline` / `GridSearchCV`.
 
@@ -9,16 +9,16 @@ Nothing here is a framework. Each helper is one function or one class you can re
 ## Install
 
 ```bash
-pip install git+https://github.com/Caerno/caernautilus.git
+pip install git+https://github.com/Caerno/bitskit.git
 ```
 
 On Kaggle / Colab the same line works in a cell (`!pip install git+...`).
 For a kernel with no internet, add
-[the archive GitHub builds for every commit](https://github.com/Caerno/caernautilus/archive/refs/heads/main.zip)
+[the archive GitHub builds for every commit](https://github.com/Caerno/bitskit/archive/refs/heads/main.zip)
 as a dataset and install it from disk:
 
 ```bash
-pip install --no-deps /kaggle/input/<your-dataset>/caernautilus-main.zip
+pip install --no-deps /kaggle/input/<your-dataset>/bitskit-main.zip
 ```
 
 Requires Python ≥ 3.9, numpy, pandas, scikit-learn, matplotlib, seaborn.
@@ -27,7 +27,7 @@ Requires Python ≥ 3.9, numpy, pandas, scikit-learn, matplotlib, seaborn.
 
 ```python
 import pandas as pd
-from caernautilus import informer, informer_print, imperfection, NanFixer, Digitalize
+from bitskit import informer, informer_print, imperfection, NanFixer, Digitalize
 
 df = pd.concat([train, test])          # test rows have no target -> NaN
 
@@ -105,7 +105,7 @@ Its pieces are static methods you can also call directly: `count`, `freq`, `top`
 ## Plots
 
 ```python
-from caernautilus import plot_conf_map, plot_some_scatters
+from bitskit import plot_conf_map, plot_some_scatters
 
 hm, precision, recall = plot_conf_map(confusion_matrix(y_true, y_pred), title="RF")
 ```
@@ -128,7 +128,7 @@ flat 2D matrix, running any sklearn decomposition on it and rebuilding the pictu
 
 ```python
 from sklearn.decomposition import PCA
-from caernautilus import img_framaker
+from bitskit import img_framaker
 
 img_framaker(img, 20, PCA)   # image restored from 20 components
 ```
@@ -167,5 +167,5 @@ pytest
 The drop-in zip in `download/` is a plain stdlib call, no notebook needed:
 
 ```bash
-python -m zipfile -c download/caernautilus.zip __init__.py classes.py input.py output.py
+python -m zipfile -c download/bitskit.zip __init__.py classes.py input.py output.py
 ```

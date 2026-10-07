@@ -1,8 +1,8 @@
-'''Caerno utilities - small helpers for EDA, plotting and feature encoding.
+'''bitskit - small helpers for EDA, plotting and feature encoding.
 
-    from caernautilus import imperfection, NanFixer, Digitalize
+    from bitskit import imperfection, NanFixer, Digitalize
 
-Submodules stay importable on their own (`from caernautilus import output`),
+Submodules stay importable on their own (`from bitskit import output`),
 which is also how the zipped drop-in build is used: `from classes import NanFixer`.
 '''
 

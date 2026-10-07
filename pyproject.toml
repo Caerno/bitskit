@@ -3,9 +3,9 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "caernautilus"
+name = "bitskit"
 version = "0.2.0"
-description = "Caerno utilities: EDA reports, plots and sklearn-compatible encoders"
+description = "EDA reports, plots and sklearn-compatible encoders"
 readme = "README.md"
 requires-python = ">=3.9"
 license = "Apache-2.0"
@@ -24,15 +24,15 @@ dependencies = [
 test = ["pytest>=7"]
 
 [project.urls]
-Homepage = "https://github.com/Caerno/caernautilus"
+Homepage = "https://github.com/Caerno/bitskit"
 
 # flat layout: the repo root itself is the package,
-# so `import classes` (zip drop-in) and `import caernautilus.classes` both work
+# so `import classes` (zip drop-in) and `import bitskit.classes` both work
 [tool.setuptools]
-packages = ["caernautilus"]
+packages = ["bitskit"]
 
 [tool.setuptools.package-dir]
-caernautilus = "."
+bitskit = "."
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -41,5 +41,5 @@ testpaths = ["tests"]
 filterwarnings = [
     "error::FutureWarning",
     "ignore::DeprecationWarning",
-    "error::DeprecationWarning:caernautilus.*",
+    "error::DeprecationWarning:bitskit.*",
 ]
