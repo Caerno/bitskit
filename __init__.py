@@ -6,7 +6,7 @@ Submodules stay importable on their own (`from bitskitten import output`),
 which is also how the zipped drop-in build is used: `from classes import NanFixer`.
 '''
 
-__version__ = "0.2.0"
+__version__ = "0.2.1"
 
 from .classes import Digitalize, Encoder, FeatureTrans, NanFixer, SlowPolyLinearReg
 from .input import number

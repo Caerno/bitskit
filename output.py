@@ -45,7 +45,8 @@ def imperfection(df:pd.DataFrame,numeric:bool=False,no_nan:bool=False) -> pd.Dat
         return series
     
     missing_df = form_series(df.isnull().sum() / len(df),"NA Share")
-    unique_df = form_series(df.apply(pd.unique),"Values")
+    # reduce: equal-length uniques (e.g. a single column) would otherwise expand into a frame
+    unique_df = form_series(df.apply(pd.unique, result_type="reduce"),"Values")
     nunique_df = form_series(unique_df.apply(len),"Num. of unique")
     type_df = form_series(df.dtypes,"Type")
 

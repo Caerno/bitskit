@@ -59,6 +59,14 @@ def test_imperfection(df):
     assert set(O.imperfection(df, numeric=True, no_nan=True).index) == {"age", "fare", "survived"}
 
 
+
+def test_imperfection_equal_uniques():
+    # every column has the same number of unique values, a single column included
+    one = pd.DataFrame({"a": ["x", None, "y"]})
+    assert O.imperfection(one).loc["a", "Num. of unique"] == 3
+    two = pd.DataFrame({"a": ["x", None, "y"], "n": [1, 2, None]})
+    assert list(O.imperfection(two, numeric=True, no_nan=True).index) == ["a", "n"]
+
 def test_multicolumn(df):
     assert O.multicolumn(df.sample(1, random_state=0).T, cols=3) is not None
 
