@@ -3,7 +3,7 @@ requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "bitskit"
+name = "bitskitten"
 version = "0.2.0"
 description = "EDA reports, plots and sklearn-compatible encoders"
 readme = "README.md"
@@ -27,12 +27,12 @@ test = ["pytest>=7"]
 Homepage = "https://github.com/Caerno/bitskit"
 
 # flat layout: the repo root itself is the package,
-# so `import classes` (zip drop-in) and `import bitskit.classes` both work
+# so `import classes` (zip drop-in) and `import bitskitten.classes` both work
 [tool.setuptools]
-packages = ["bitskit"]
+packages = ["bitskitten"]
 
 [tool.setuptools.package-dir]
-bitskit = "."
+bitskitten = "."
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -41,5 +41,5 @@ testpaths = ["tests"]
 filterwarnings = [
     "error::FutureWarning",
     "ignore::DeprecationWarning",
-    "error::DeprecationWarning:bitskit.*",
+    "error::DeprecationWarning:bitskitten.*",
 ]

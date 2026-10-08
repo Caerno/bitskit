@@ -1,8 +1,8 @@
-'''bitskit - small helpers for EDA, plotting and feature encoding.
+'''bitskitten - small helpers for EDA, plotting and feature encoding.
 
-    from bitskit import imperfection, NanFixer, Digitalize
+    from bitskitten import imperfection, NanFixer, Digitalize
 
-Submodules stay importable on their own (`from bitskit import output`),
+Submodules stay importable on their own (`from bitskitten import output`),
 which is also how the zipped drop-in build is used: `from classes import NanFixer`.
 '''
 

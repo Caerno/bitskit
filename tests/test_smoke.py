@@ -13,8 +13,8 @@ from sklearn.metrics import r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 
-from bitskit import classes as C
-from bitskit import output as O
+from bitskitten import classes as C
+from bitskitten import output as O
 
 
 @pytest.fixture
